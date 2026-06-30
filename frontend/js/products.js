@@ -1,4 +1,4 @@
-var API_URL = "http://localhost:5000";
+var API_URL = "https://ecart-website-1mwa.onrender.com";
 var products = [];
 
 // get products from database
