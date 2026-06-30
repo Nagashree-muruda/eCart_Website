@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "npx --prefix backend nodemon backend/server.js"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.13.1",
+    "express-session": "^1.19.0"
+  }
+}
