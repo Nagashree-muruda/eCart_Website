@@ -1,4 +1,4 @@
-var API_URL = "https://ecart-website-1mwa.onrender.com";
+var API_URL = "https://ecart-website-1.onrender.com";
 
 // switch between login and register tab
 function showTab(tab) {
