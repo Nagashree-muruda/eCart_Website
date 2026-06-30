@@ -319,7 +319,7 @@ var productList = [
     name: "Web Development",
     description: "HTML, CSS & JavaScript Guide",
     price: 899,
-    image: "../images/book5.webp",
+    image: "../images/book5.jpg",
   },
   {
     id: 41,
