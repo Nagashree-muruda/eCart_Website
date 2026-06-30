@@ -1,6 +1,5 @@
 const Order = require("../models/Order");
 
-// place order
 async function placeOrder(req, res) {
   var items = req.body.items;
   var totalItems = req.body.totalItems;
@@ -19,12 +18,6 @@ async function placeOrder(req, res) {
       totalPrice: totalPrice,
     });
 
-    // if user is logged in save their id too
-    if (req.user) {
-      newOrder.userId = req.user.id;
-      newOrder.username = req.user.username;
-    }
-
     await newOrder.save();
 
     res.status(201).json({ message: "Order placed successfully" });
@@ -34,10 +27,9 @@ async function placeOrder(req, res) {
   }
 }
 
-// get orders of logged in user
 async function getMyOrders(req, res) {
   try {
-    var orders = await Order.find({ userId: req.user.id });
+    var orders = await Order.find({ username: req.user.username });
     res.json(orders);
   } catch (err) {
     console.log(err);

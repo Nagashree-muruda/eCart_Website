@@ -403,14 +403,12 @@ var productList = [
   },
 ];
 
-// add products to database if not already added
+// add products to database when server starts
 async function seedProducts() {
   try {
-    var count = await Product.countDocuments();
-    if (count == 0) {
-      await Product.insertMany(productList);
-      console.log("Products added to database");
-    }
+    await Product.deleteMany({});
+    await Product.insertMany(productList);
+    console.log("Products added to database");
   } catch (err) {
     console.log(err);
   }

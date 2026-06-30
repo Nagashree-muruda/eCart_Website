@@ -7,11 +7,16 @@ async function loadProducts() {
     var response = await fetch(API_URL + "/api/products");
     var data = await response.json();
     products = data;
+    if (products.length == 0) {
+      document.getElementById("productContainer").innerHTML =
+        "<p class='text-center mt-4'>No products found.</p>";
+      return;
+    }
     showProducts(products);
     updateCartCount();
   } catch (err) {
     document.getElementById("productContainer").innerHTML =
-      "<p class='text-danger text-center mt-4'>Could not load products. Please start the server.</p>";
+      "<p class='text-danger text-center mt-4'>Could not load products. Please try again.</p>";
   }
 }
 
